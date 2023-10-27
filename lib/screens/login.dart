@@ -20,8 +20,8 @@ class LoginScreen extends StatelessWidget {
     final response = await http.post(
       Uri.parse('https://baid.devlivery.com.br/api/auth/login'),
       body: json.encode({
-        "username": "$email",
-        "password": "$password",
+        "username": "${email}",
+        "password": "${password}",
       }),
       headers: {
         HttpHeaders.contentTypeHeader: "application/json",
