@@ -1,23 +1,26 @@
 import 'package:baid_health_dev/model/health_profile.dart';
+
 class User {
-  final String id;
-  final String name;
-  final String email;
-  final DateTime dateOfBirth;
-  final String gender;
-  final String celular;
-  final String cpf;
-  final HealthProfile healthProfile;
+  String id;
+  String name;
+  String email;
+  DateTime dateOfBirth;
+  String gender;
+  String celular;
+  String cpf;
+  HealthProfile healthProfile;
+  String token;
 
   User({
-    required this.id,
-    required this.name,
-    required this.email,
+    this.id = "",
+    this.name = "",
+    this.email = "",
     required this.dateOfBirth,
-    required this.gender,
-    required this.celular,
-    required this.cpf,
+    this.gender = "",
+    this.celular = "",
+    this.cpf = "",
     required this.healthProfile,
+    this.token ="",
   });
 
   factory User.fromJson(Map<String, dynamic> json) {
@@ -30,27 +33,7 @@ class User {
       celular: json['celular'],
       cpf: json['cpf'],
       healthProfile: HealthProfile.fromJson(json['perfil_saude']),
-    );
-  }
-}
-
-
-
-
-
-class Disease {
-  final int id;
-  final String nome;
-
-  Disease({
-    required this.id,
-    required this.nome,
-  });
-
-  factory Disease.fromJson(Map<String, dynamic> json) {
-    return Disease(
-      id: json['id'],
-      nome: json['nome'],
+      token: json['token']
     );
   }
 }

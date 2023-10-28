@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:baid_health_dev/controller/auth_controller.dart';
+import 'package:baid_health_dev/user_controller.dart';
 import 'package:baid_health_dev/screens/login.dart';
 import 'dart:io';
+import 'package:baid_health_dev/controller/auth_controller.dart';
 
 void main() {
   HttpOverrides.global = MyHttpOverrides();
@@ -10,7 +11,10 @@ void main() {
     home: LoginScreen(),
     debugShowCheckedModeBanner: false,
     initialBinding: BindingsBuilder(() {
-      Get.lazyPut<AuthController>(() => AuthController());
+      //Get.lazyPut(() => UserController());
+      Get.lazyPut<UserController>(() => UserController());
+      
+      //Get.lazyPut<AuthController>(() => AuthController());
     }),
   ));
 }

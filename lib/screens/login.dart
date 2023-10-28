@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:baid_health_dev/user_controller.dart';
+import 'package:baid_health_dev/model/user.dart';
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
@@ -10,13 +12,22 @@ import 'package:baid_health_dev/screens/homescreen.dart';
 import 'dart:developer' as developer;
 
 class LoginScreen extends StatelessWidget {
-  final TextEditingController emailController = TextEditingController();
-  final TextEditingController passwordController = TextEditingController();
+  //UserController userController;
 
+  //UserController userController = Get.find<UserController>();
+  final UserController userController = Get.put(UserController());
+
+  //final TextEditingController emailController = TextEditingController();
+  //final TextEditingController passwordController = TextEditingController();
+/*
   void _login() async {
-    final String email = emailController.text;
-    final String password = passwordController.text;
-    //final dio = Dio();
+    //final String email = emailController.text;
+    //final String password = passwordController.text;
+
+    
+
+    if (userController.user.value.token.isNotEmpty) {
+      /*
     final response = await http.post(
       Uri.parse('https://baid.devlivery.com.br/api/auth/login'),
       body: json.encode({
@@ -31,15 +42,18 @@ class LoginScreen extends StatelessWidget {
     print(response.body);
 
     if (response.statusCode == 200) {
+      final Map<String, dynamic> userData = json.decode(response.body);
+
       final data = json.decode(response.body);
       final token = data['token'];
 
       // Armazene o token no GetX para uso posterior
-      Get.find<AuthController>().setToken(token);
+      //Get.find<UserController>().fetchUser(userData);
+      //Get.find<AuthController>().setToken(token);
       developer.log('Mostrando se deu certo', name: jsonEncode(token));
 
-      // Navegue para a tela inicial
-      Get.off(HomeScreen());
+      // Navegue para a tela inicial*/
+      Get.off(() => HomeScreen());
     } else {
       // Lidar com erro de login
       Get.snackbar(
@@ -50,10 +64,11 @@ class LoginScreen extends StatelessWidget {
         colorText: Colors.white,
       );
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
+    //UserController userController = Get.find<UserController>();
     return Scaffold(
       appBar: AppBar(title: Text('Tela de Login')),
       body: Center(
@@ -63,16 +78,16 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextField(
-                controller: emailController,
+                controller: userController.emailController,
                 decoration: InputDecoration(labelText: 'E-mail'),
               ),
               TextField(
-                controller: passwordController,
+                controller: userController.passwordController,
                 decoration: InputDecoration(labelText: 'Senha'),
                 obscureText: true,
               ),
               ElevatedButton(
-                onPressed: _login,
+                onPressed: ()=> userController.fetchUser(),
                 child: Text('Login'),
               ),
             ],
