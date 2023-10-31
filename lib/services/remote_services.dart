@@ -33,6 +33,7 @@ class RemoteServices {
   }
 
   static Future<http.Response> getData(String token) async {
+    print(token);
     final response = await http.get(
       Uri.parse('https://baid.devlivery.com.br/api/users/me'),
       headers: {
@@ -49,6 +50,7 @@ class RemoteServices {
   }
 
   static Future<List<Doenca>> getDoencas(String token) async {
+    print(token);
     final response = await client.get(
       Uri.parse('https://baid.devlivery.com.br/api/doencas'),
       headers: {
@@ -78,6 +80,7 @@ class RemoteServices {
     );
     if (response.statusCode == 200) {
       //var jsonString = json.decode(response.body);
+      print(response);
       var habitos = Habito.habitoFromJson(response.body);
 
       return habitos;

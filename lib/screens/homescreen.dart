@@ -57,14 +57,20 @@ class UserSection extends StatelessWidget {
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [ElevatedButton(
+            children: [
+              ElevatedButton(
                 onPressed: ()=> userController.fetchDoencas(),
                 child: Text('Ir para doenças'),
               ),
           ElevatedButton(
-                onPressed: ()=>Get.to(()=>EditProfile()),
+                onPressed: ()=> Get.to(()=>EditProfile()),
                 child: Text('Editar Perfil'),
-              ),],
+              ),
+          ElevatedButton(
+                onPressed: ()=>userController.fetchHabito(),
+                child: Text('Ir para habitos'),
+              ),
+            ],
           )
         ],
       ),
@@ -95,7 +101,7 @@ class DiseaseSection extends StatelessWidget {
             itemCount: userController.doencasList2.length,
             itemBuilder: (context, index) {
               return ListTile(
-                title: Text('Doença: ${userController.doencasList2[index].nome}'),
+                title: Obx(() => Text('Doença: ${userController.doencasList2[index].nome}'),),
               );
             },
           ),),
@@ -105,6 +111,40 @@ class DiseaseSection extends StatelessWidget {
   }
 }
 
+class HabitsSection extends StatelessWidget {
+  //final List<Disease> diseases;
+  //DiseaseSection({required this.diseases});
+  final UserController userController = Get.put(UserController());
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(16.0),
+      color: Colors.green,
+      child:  Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Text(
+            'Hábitos',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          ),
+          Obx(() =>  ListView.builder(
+            shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
+            itemCount: userController.habitosList.length,
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Obx(() => Text('Doença: ${userController.habitosList[index].nome}'),),
+              );
+            },
+          ),),
+        ],
+      ),
+    );
+  }
+}
+
+/*
 class HabitsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -130,4 +170,4 @@ class HabitsSection extends StatelessWidget {
       ),
     );
   }
-}
+}*/

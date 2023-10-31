@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:baid_health_dev/model/doenca.dart';
 import 'package:baid_health_dev/screens/doencas_screen.dart';
+import 'package:baid_health_dev/screens/habitos_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -14,6 +15,17 @@ import 'package:baid_health_dev/services/remote_services.dart';
 class UserController extends GetxController {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  //campos para editar o perfil
+  final TextEditingController weightController = TextEditingController();
+  final TextEditingController heightController = TextEditingController();
+  final TextEditingController cardSusController = TextEditingController();
+  final TextEditingController healthUnityIdController = TextEditingController();
+  final TextEditingController diabetesTypeIdController =
+      TextEditingController();
+  final TextEditingController diabetesTimeController = TextEditingController();
+  final TextEditingController doencasController = TextEditingController();
+  final TextEditingController habitosController = TextEditingController();
 
   var user = User().obs;
 
@@ -81,6 +93,7 @@ class UserController extends GetxController {
       final token = data['token'];
       setToken(token);
       fetchData();
+      //fetchHabito();
       //fetchDoencas();
 
       Get.to(() => HomeScreen()); // Passe o usuário para a HomeScreen
@@ -111,9 +124,11 @@ class UserController extends GetxController {
     var habitos = await RemoteServices.getHabitos(token.string);
     if (habitos.isNotEmpty) {
       habitosList.value = habitos;
-      Get.to(() => DoencasScreen()); //criar a screen de hábitos
+      Get.to(() => HabitosScreen()); //criar a screen de hábitos
     } else {
       print("erro");
     }
   }
+
+  void editUser() async {}
 }
