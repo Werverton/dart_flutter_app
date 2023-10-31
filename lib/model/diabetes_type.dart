@@ -3,8 +3,8 @@ class DiabetesType {
   final String nome;
 
   DiabetesType({
-    required this.id,
-    required this.nome,
+    this.id =0,
+    this.nome="",
   });
 
   factory DiabetesType.fromJson(Map<String, dynamic> json) {

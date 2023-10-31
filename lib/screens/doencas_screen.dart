@@ -1,24 +1,28 @@
 import 'dart:convert';
+import 'package:baid_health_dev/controller/user_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'package:get/get.dart';
 
 class DoencasScreen extends StatelessWidget {
-  final ItemController itemController = Get.put(ItemController());
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Item List'),
+        title: Text('Informações de doença'),
       ),
-      body: Obx(
-        () => ListView.builder(
-          itemCount: itemController.items.length,
+      body: ListView.builder(
+          shrinkWrap: true,
+          itemCount: userController.doencasList2.length,
           itemBuilder: (context, index) {
-            final item = itemController.items[index];
-            return ListTile(
-              title: Text(item.name),
+            //final item = userController.doencasList2[index];
+            return Obx(() => 
+            ListTile(
+              
+              title: Text('Nome: ${userController.doencasList2[index].nome}'),
               trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -36,9 +40,8 @@ class DoencasScreen extends StatelessWidget {
                   ),
                 ],
               ),
-            );
+            ));
           },
-        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

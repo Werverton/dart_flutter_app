@@ -1,5 +1,5 @@
-import 'package:baid_health_dev/model/diabetes_type.dart';
-import 'package:baid_health_dev/model/disease.dart';
+/*import 'package:baid_health_dev/model/diabetes_type.dart';
+import 'package:baid_health_dev/model/doenca.dart';
 import 'package:baid_health_dev/model/habit.dart';
 import 'package:baid_health_dev/model/diabetes_duration.dart';
 
@@ -13,9 +13,9 @@ class HealthProfile {
   final List<Habit> habitos;
 
   HealthProfile({
-    required this.peso,
-    required this.altura,
-    required this.imc,
+    this.peso= 0,
+    this.altura =0,
+    this.imc=0,
     required this.tipoDiabete,
     required this.tempoDiabete,
     required this.doencas,
@@ -25,8 +25,8 @@ class HealthProfile {
   factory HealthProfile.fromJson(Map<String, dynamic> json) {
     return HealthProfile(
       peso: json['peso'].toDouble(),
-      altura: json['altura'].toDouble(),
-      imc: json['imc'].toDouble(),
+      altura: json['altura']?.toDouble(),
+      imc: json['imc']?.toDouble(),
       tipoDiabete: DiabetesType.fromJson(json['tipo_diabete']),
       tempoDiabete: DiabetesDuration.fromJson(json['tempo_diabete']),
       doencas: (json['doencas'] as List<dynamic>)
@@ -37,4 +37,4 @@ class HealthProfile {
           .toList(),
     );
   }
-}
+}*/

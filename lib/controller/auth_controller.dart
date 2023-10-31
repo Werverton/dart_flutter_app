@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:http/http.dart';
 
 class AuthController extends GetxController {
   String token = '';
@@ -6,4 +7,6 @@ class AuthController extends GetxController {
   void setToken(String newToken) {
     token = newToken;
   }
+
+  
 }

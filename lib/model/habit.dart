@@ -3,8 +3,8 @@ class Habit {
   final String nome;
 
   Habit({
-    required this.id,
-    required this.nome,
+    this.id=0,
+    this.nome="",
   });
 
   factory Habit.fromJson(Map<String, dynamic> json) {
