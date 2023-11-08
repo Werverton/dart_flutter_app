@@ -32,7 +32,7 @@ class loginScreen extends StatelessWidget {
                   controller: userController.emailController,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    label: Text("Enter Username"),
+                    label: Text("Entre com o e-mail"),
                     prefixIcon: Icon(Icons.person),
                   ),
                 ),
@@ -44,7 +44,7 @@ class loginScreen extends StatelessWidget {
                   obscureText: passToggle ? true : false,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    label: Text("Enter Password"),
+                    label: Text("Entre com a senha"),
                     prefixIcon: Icon(Icons.lock),
                     suffixIcon: InkWell(
                       onTap: () {
@@ -101,7 +101,7 @@ class loginScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't have any account?",
+                    "Ainda não possui um cadastro?",
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w500,
@@ -113,7 +113,7 @@ class loginScreen extends StatelessWidget {
                       Get.to(SignUpScreen());
                     },
                     child: Text(
-                      "Create Account",
+                      "Cadastre-se",
                       style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

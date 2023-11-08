@@ -23,7 +23,7 @@ class _GlicemiaPageState extends State<GlicemiaPage> {
         child: Column(
           children: <Widget>[
             const TextField(
-              decoration: InputDecoration(labelText: 'Insira o valor da glicemia'),
+              decoration: InputDecoration(labelText: 'Insira o valor da glicemia mg/dL'),
             ),
             const SizedBox(height: 16.0),
             DropdownButton<String>(

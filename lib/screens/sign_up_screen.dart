@@ -30,8 +30,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 padding: EdgeInsets.symmetric(vertical: 8, horizontal: 15),
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: "Full Name",
-                    border: OutlineInputBorder(),
+                    labelText: "Full Name",border: OutlineInputBorder(),
+                    
                     prefixIcon: Icon(Icons.person),
                   ),
                 ),

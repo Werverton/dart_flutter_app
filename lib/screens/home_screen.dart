@@ -7,6 +7,7 @@ import 'package:baid_health_dev/screens/care_plan/colesterol_screen.dart';
 import 'package:baid_health_dev/screens/care_plan/glicemia_screen.dart';
 import 'package:baid_health_dev/screens/care_plan/hemoglobina_glicada_screen.dart';
 import 'package:baid_health_dev/screens/care_plan/pressao_arterial_screen.dart';
+import 'package:get_storage/get_storage.dart';
 
 class HomeScreen extends StatelessWidget {
   final UserController userController = Get.put(UserController());
@@ -19,16 +20,22 @@ class HomeScreen extends StatelessWidget {
   ];
 
   List imgs = [
-    "doctor1.jpg",
+    "colesterol.jpg",
     "doctor2.jpg",
     "doctor3.jpg",
-    "doctor4.jpg",
+    "pressao.jpg",
   ];
   List<Widget Function()> pages = [
     () => const ColesterolPage(),
     () => const GlicemiaPage(),
     () => const HemoglobinaGlicadaPage(),
-    () => const PressaoArterialPage(),
+    () => const BloodPressureInput(),
+  ];
+  List infos = [
+    "Colesterol",
+    "Glicemia",
+    "Hemoglobina Glicada",
+    "Pressão Arterial"
   ];
 
   @override
@@ -262,8 +269,8 @@ class HomeScreen extends StatelessWidget {
                           radius: 35,
                           backgroundImage: AssetImage("images/${imgs[index]}"),
                         ),
-                        const Text(
-                          "Dr. Doctor Name",
+                        Text(
+                          infos[index],
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,
@@ -271,7 +278,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "Insira suas informações de ",
+                          "Registre "+infos[index],
                           style: TextStyle(
                             color: Colors.black45,
                           ),
