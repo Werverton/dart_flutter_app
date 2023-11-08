@@ -1,3 +1,4 @@
+import 'package:baid_health_dev/screens/profile/user_data.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:baid_health_dev/screens/appointment_screen.dart';
@@ -12,11 +13,9 @@ import 'package:get_storage/get_storage.dart';
 class HomeScreen extends StatelessWidget {
   final UserController userController = Get.put(UserController());
   List symptoms = [
-    "Temperature",
-    "Snuffle",
-    "Fever",
-    "Cough",
-    "Cold",
+    "Saúde",
+    "Bem-estar",
+    "Time de Cuidado",
   ];
 
   List imgs = [
@@ -72,7 +71,13 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserData(),
+                        ));
+                  },
                   child: Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
@@ -103,7 +108,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 30),
                         Text(
-                          "Clinic Visit",
+                          "Adicionar histórico",
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.white,
@@ -112,7 +117,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "Make an appointment",
+                          "Meu status hoje",
                           style: TextStyle(
                             color: Colors.white54,
                           ),
@@ -122,7 +127,13 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => UserData(),
+                        ));
+                  },
                   child: Container(
                     padding: EdgeInsets.all(20),
                     decoration: BoxDecoration(
@@ -146,14 +157,14 @@ class HomeScreen extends StatelessWidget {
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
-                            Icons.home_filled,
+                            Icons.person_2_sharp,
                             color: Color(0xFF7165D6),
                             size: 35,
                           ),
                         ),
                         SizedBox(height: 30),
                         Text(
-                          "Home Visit",
+                          "Minhas infos",
                           style: TextStyle(
                             fontSize: 18,
                             color: Colors.black,
@@ -162,7 +173,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedBox(height: 5),
                         Text(
-                          "Call the doctor home",
+                          "Alterar informações",
                           style: TextStyle(
                             color: Colors.black54,
                           ),
@@ -177,7 +188,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 15),
               child: Text(
-                "Como você está hoje?",
+                "Minha Saúde",
                 style: TextStyle(
                   fontSize: 23,
                   fontWeight: FontWeight.w500,
