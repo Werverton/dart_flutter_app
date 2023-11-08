@@ -8,7 +8,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:baid_health_dev/controller/auth_controller.dart';
-import 'package:baid_health_dev/screens/homescreen.dart';
+import 'package:baid_health_dev/screens/profile/homescreen.dart';
 import 'dart:developer' as developer;
 
 class LoginScreen extends StatelessWidget {

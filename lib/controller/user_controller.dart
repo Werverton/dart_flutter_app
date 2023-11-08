@@ -1,15 +1,17 @@
 import 'dart:io';
 
 import 'package:baid_health_dev/model/doenca.dart';
-import 'package:baid_health_dev/screens/doencas_screen.dart';
-import 'package:baid_health_dev/screens/habitos_screen.dart';
+import 'package:baid_health_dev/screens/profile/doencas_screen.dart';
+import 'package:baid_health_dev/screens/profile/habitos_screen.dart';
+import 'package:baid_health_dev/widgets/navbar_roots.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:baid_health_dev/model/user.dart';
-import 'package:baid_health_dev/screens/homescreen.dart';
+
+import 'package:baid_health_dev/screens/home_screen.dart';
 import 'package:baid_health_dev/services/remote_services.dart';
 
 class UserController extends GetxController {
@@ -87,6 +89,7 @@ class UserController extends GetxController {
         HttpHeaders.acceptHeader: 'application/json',
       },
     );
+    print(response);
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
@@ -96,7 +99,7 @@ class UserController extends GetxController {
       //fetchHabito();
       //fetchDoencas();
 
-      Get.to(() => HomeScreen()); // Passe o usuário para a HomeScreen
+      Get.to(() => NavBarRoots()); // Passe o usuário para a HomeScreen
     } else {
       Get.snackbar(
         'Erro de Login',
