@@ -1,3 +1,4 @@
+import 'package:baid_health_dev/screens/profile/care_plan_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:healthcare/screens/home_screen.dart';
@@ -16,7 +17,7 @@ class _NavBarRootsState extends State<NavBarRoots> {
   int _selectedIndex = 0;
   final _screens = [
     HomeScreen(),
-    MessagesScreen(),
+    CarePlanScreen(),
     ScheduleScreen(),
     SettingScreen(),
   ];
