@@ -9,30 +9,26 @@ class CarePlanController extends GetxController {
   //final RemoteServices remoteServices;
   var itemCarePlanList = <ItemCarePlan>[].obs;
   final UserController userController = Get.put(UserController());
-  
+
   final RxBool _isLoading = false.obs;
 
   //RxBool get isLoading => _isLoading;
-  
 
   @override
   void onInit() {
     // TODO: implement onInit
     super.onInit();
-    
   }
 
   void fetchDoencas(String token) async {
-    
-    var itens =
-        await RemoteServices.getItensCarePlan(token);
+    var itens = await RemoteServices.getItensCarePlan(token);
     print(itens);
 
     if (itens.isNotEmpty) {
-      itemCarePlanList.addAll(itens);
-      //itemCarePlanList.value = itens;
+      //itemCarePlanList.addAll(itens);
+      itemCarePlanList.value = itens;
+      print(itemCarePlanList.length);
       //Get.to(() => CarePlanScreen());
-      
     } else {
       print("erro");
     }
