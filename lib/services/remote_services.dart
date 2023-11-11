@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'package:baid_health_dev/model/itens_care_plan.dart';
 import 'package:baid_health_dev/model/user.dart';
 import 'package:baid_health_dev/screens/profile/doencas_screen.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:http/http.dart' as http;
 
 import 'package:baid_health_dev/model/doenca.dart';
@@ -101,18 +102,19 @@ class RemoteServices {
       },
     );
     if (response.statusCode == 200) {
-      print(response.body);
       //var jsonString = json.decode(response.body);
       // Decodifique a string JSON em uma lista de objetos JSON
-      List<Map<String, dynamic>> jsonList = json.decode(response.body);
+      final jsonBody = json.decode(response.body);
+      //final token = jsonBody["itens"];
+      print(jsonBody[0]["itens"]);
+      final minhaString = jsonBody[0]["itens"];
+      final minhaString2 = json.encode(minhaString);
+      print(minhaString2);
 
-      // Extraia a lista de itens do JSON
-      List<Map<String, dynamic>> itemJsonList = jsonList[0]['itens'];
+      var itemCarePlanList = ItemCarePlan.itemCareFromJson(minhaString2);
+      // Decode the JSON string
 
-      // Converta a lista de itens em objetos ItemCarePlan
-      List<ItemCarePlan> itemCarePlanList = itemJsonList
-          .map((itemJson) => ItemCarePlan.fromJson(itemJson))
-          .toList();
+      //print(itemCarePlanList[1].code);
 
       return itemCarePlanList;
     } else {

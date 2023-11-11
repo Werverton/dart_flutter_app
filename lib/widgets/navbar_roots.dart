@@ -1,4 +1,7 @@
-import 'package:baid_health_dev/screens/profile/care_plan_screen.dart';
+import 'package:baid_health_dev/controller/care_plan_controller.dart';
+import 'package:baid_health_dev/controller/user_controller.dart';
+import 'package:baid_health_dev/screens/care_plan_screen.dart';
+import 'package:baid_health_dev/services/care_plan_services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:healthcare/screens/home_screen.dart';
@@ -6,7 +9,7 @@ import 'package:baid_health_dev/screens/messages_screen.dart';
 import 'package:baid_health_dev/screens/schedule_screen.dart';
 import 'package:baid_health_dev/screens/settings_screen.dart';
 import 'package:baid_health_dev/screens/home_screen.dart';
-
+import 'package:get/get.dart';
 
 class NavBarRoots extends StatefulWidget {
   @override
@@ -21,6 +24,9 @@ class _NavBarRootsState extends State<NavBarRoots> {
     ScheduleScreen(),
     SettingScreen(),
   ];
+  final CarePlanController carePlanController = Get.put(CarePlanController());
+  final UserController userController = Get.put(UserController());
+  //final CarePlanController _carePlanController = Get.find();
 
   @override
   Widget build(BuildContext context) {
@@ -40,22 +46,25 @@ class _NavBarRootsState extends State<NavBarRoots> {
           ),
           currentIndex: _selectedIndex,
           onTap: (index) {
+            if (index == 1) {
+              carePlanController.fetchDoencas(userController.token.value);
+            }
             setState(() {
               _selectedIndex = index;
             });
           },
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled), label: "Home"),
+                icon: Icon(Icons.home_filled), label: "Início"),
             BottomNavigationBarItem(
                 icon: Icon(
-                  CupertinoIcons.chat_bubble_text_fill,
+                  CupertinoIcons.heart_fill,
                 ),
-                label: "Messages"),
+                label: "Saúde"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.calendar_month_outlined), label: "Schedule"),
+                icon: Icon(Icons.calendar_month_outlined), label: "Agenda"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: "Settings"),
+                icon: Icon(Icons.settings), label: "Configurações"),
           ],
         ),
       ),
