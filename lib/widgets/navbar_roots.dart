@@ -2,6 +2,7 @@ import 'package:baid_health_dev/controller/care_plan_controller.dart';
 import 'package:baid_health_dev/controller/user_controller.dart';
 import 'package:baid_health_dev/screens/care_plan_screen.dart';
 import 'package:baid_health_dev/services/care_plan_services.dart';
+import 'package:baid_health_dev/widgets/upcoming_schedule.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 //import 'package:healthcare/screens/home_screen.dart';
@@ -20,7 +21,7 @@ class _NavBarRootsState extends State<NavBarRoots> {
   int _selectedIndex = 0;
   final _screens = [
     HomeScreen(),
-    CarePlanScreen(),
+    UpcomingSchedule(),
     ScheduleScreen(),
     SettingScreen(),
   ];

@@ -25,7 +25,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
-              "Schedule",
+              "Plano de cuidados",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w500,
@@ -58,7 +58,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
-                      "Upcoming",
+                      "Plano",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
