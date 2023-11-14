@@ -12,7 +12,7 @@ class CarePlanController extends GetxController {
 
   final RxBool _isLoading = false.obs;
 
-  //RxBool get isLoading => _isLoading;
+  RxBool get isLoading => _isLoading;
 
   @override
   void onInit() {
@@ -23,12 +23,14 @@ class CarePlanController extends GetxController {
   void fetchDoencas(String token) async {
     var itens = await RemoteServices.getItensCarePlan(token);
     print(itens);
+    _isLoading.value = true;
 
     if (itens.isNotEmpty) {
       //itemCarePlanList.addAll(itens);
       itemCarePlanList.value = itens;
       print(itemCarePlanList.length);
       //Get.to(() => CarePlanScreen());
+      _isLoading.value = false;
     } else {
       print("erro");
     }
