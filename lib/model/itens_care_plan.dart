@@ -57,6 +57,8 @@ class Medicamento {
         this.horarios,
     });
 
+    static List<Medicamento> medicamentoFromJson(String str) => List<Medicamento>.from(json.decode(str).map((x) => Medicamento.fromJson(x)));
+
     factory Medicamento.fromRawJson(String str) => Medicamento.fromJson(json.decode(str));
 
     String toRawJson() => json.encode(toJson());
@@ -84,6 +86,8 @@ class Horario {
     Horario({
         this.hora,
     });
+
+    static List<Horario> horarioFromJson(String str) => List<Horario>.from(json.decode(str).map((x) => Horario.fromJson(x)));
 
     factory Horario.fromRawJson(String str) => Horario.fromJson(json.decode(str));
 

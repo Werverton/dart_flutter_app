@@ -92,7 +92,7 @@ class RemoteServices {
     }
   }
 
-  static Future<List<ItemCarePlan>> getItensCarePlan(String token) async {
+  static Future<String> getItensCarePlan(String token) async {
     final response = await client.get(
       Uri.parse('https://baid.devlivery.com.br/api/plano-cuidado'),
       headers: {
@@ -102,21 +102,9 @@ class RemoteServices {
       },
     );
     if (response.statusCode == 200) {
-      //var jsonString = json.decode(response.body);
-      // Decodifique a string JSON em uma lista de objetos JSON
-      final jsonBody = json.decode(response.body);
-      //final token = jsonBody["itens"];
-      print(jsonBody[0]["itens"]);
-      final minhaString = jsonBody[0]["itens"];
-      final minhaString2 = json.encode(minhaString);
-      print(minhaString2);
+      print(response.body);
 
-      var itemCarePlanList = ItemCarePlan.itemCareFromJson(minhaString2);
-      // Decode the JSON string
-
-      //print(itemCarePlanList[1].code);
-
-      return itemCarePlanList;
+      return response.body;
     } else {
       throw Exception();
     }
