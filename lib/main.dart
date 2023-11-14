@@ -1,3 +1,4 @@
+import 'package:baid_health_dev/controller/care_plan_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:baid_health_dev/controller/user_controller.dart';
@@ -12,6 +13,7 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialBinding: BindingsBuilder(() {
       Get.lazyPut<UserController>(() => UserController());
+      //Get.lazyPut(() => CarePlanController(myHttpClient: myHttpClient))
     }),
   ));
 }

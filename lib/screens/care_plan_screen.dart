@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:baid_health_dev/widgets/upcoming_schedule.dart';
 
-class ScheduleScreen extends StatefulWidget {
+class CarePlanScreen extends StatefulWidget {
   @override
-  State<ScheduleScreen> createState() => _ScheduleScreenState();
+  State<CarePlanScreen> createState() => _CarePlanScreenState();
 }
 
-class _ScheduleScreenState extends State<ScheduleScreen> {
+class _CarePlanScreenState extends State<CarePlanScreen> {
   int _buttonIndex = 0;
 
   final _scheduleWidgets = [
@@ -25,7 +25,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Text(
-              "Plano de cuidados",
+              "Schedule",
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.w500,
@@ -58,7 +58,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: Text(
-                      "Plano",
+                      "Upcoming",
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,
@@ -128,4 +128,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
       ),
     ));
   }
+
+  
 }
