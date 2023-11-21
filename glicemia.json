@@ -1,0 +1,260 @@
+[
+ {
+  "insertedAt": "2015-07-28T17:35:03.603Z",
+  "value": 91,
+  "condition": "condition 1",
+  "id": "1"
+ },
+ {
+  "insertedAt": "2031-10-15T14:58:35.400Z",
+  "value": 39,
+  "condition": "condition 2",
+  "id": "2"
+ },
+ {
+  "insertedAt": "2073-07-21T21:58:49.185Z",
+  "value": 71,
+  "condition": "condition 3",
+  "id": "3"
+ },
+ {
+  "insertedAt": "2026-05-15T20:42:00.752Z",
+  "value": 63,
+  "condition": "condition 4",
+  "id": "4"
+ },
+ {
+  "insertedAt": "2048-01-16T22:30:21.691Z",
+  "value": 35,
+  "condition": "condition 5",
+  "id": "5"
+ },
+ {
+  "insertedAt": "1995-07-25T16:15:08.776Z",
+  "value": 19,
+  "condition": "condition 6",
+  "id": "6"
+ },
+ {
+  "insertedAt": "2099-12-26T17:18:40.380Z",
+  "value": 29,
+  "condition": "condition 7",
+  "id": "7"
+ },
+ {
+  "insertedAt": "1992-08-03T21:03:59.743Z",
+  "value": 33,
+  "condition": "condition 8",
+  "id": "8"
+ },
+ {
+  "insertedAt": "2098-05-15T05:19:55.564Z",
+  "value": 72,
+  "condition": "condition 9",
+  "id": "9"
+ },
+ {
+  "insertedAt": "2012-05-21T00:44:22.155Z",
+  "value": 80,
+  "condition": "condition 10",
+  "id": "10"
+ },
+ {
+  "insertedAt": "2079-10-14T23:05:39.878Z",
+  "value": 22,
+  "condition": "condition 11",
+  "id": "11"
+ },
+ {
+  "insertedAt": "2001-05-18T10:43:44.358Z",
+  "value": 6,
+  "condition": "condition 12",
+  "id": "12"
+ },
+ {
+  "insertedAt": "2009-07-08T22:27:52.946Z",
+  "value": 39,
+  "condition": "condition 13",
+  "id": "13"
+ },
+ {
+  "insertedAt": "2096-12-15T19:56:31.291Z",
+  "value": 73,
+  "condition": "condition 14",
+  "id": "14"
+ },
+ {
+  "insertedAt": "2024-01-31T23:24:41.614Z",
+  "value": 33,
+  "condition": "condition 15",
+  "id": "15"
+ },
+ {
+  "insertedAt": "2097-04-19T03:39:29.152Z",
+  "value": 31,
+  "condition": "condition 16",
+  "id": "16"
+ },
+ {
+  "insertedAt": "2057-08-10T01:26:15.548Z",
+  "value": 14,
+  "condition": "condition 17",
+  "id": "17"
+ },
+ {
+  "insertedAt": "2061-09-16T11:44:03.126Z",
+  "value": 10,
+  "condition": "condition 18",
+  "id": "18"
+ },
+ {
+  "insertedAt": "2056-05-09T04:09:03.197Z",
+  "value": 66,
+  "condition": "condition 19",
+  "id": "19"
+ },
+ {
+  "insertedAt": "2031-08-08T17:11:00.113Z",
+  "value": 58,
+  "condition": "condition 20",
+  "id": "20"
+ },
+ {
+  "insertedAt": "2005-10-21T04:53:48.173Z",
+  "value": 56,
+  "condition": "condition 21",
+  "id": "21"
+ },
+ {
+  "insertedAt": "2050-06-25T23:34:15.865Z",
+  "value": 57,
+  "condition": "condition 22",
+  "id": "22"
+ },
+ {
+  "insertedAt": "2099-02-10T19:37:37.367Z",
+  "value": 50,
+  "condition": "condition 23",
+  "id": "23"
+ },
+ {
+  "insertedAt": "2010-02-24T13:35:40.481Z",
+  "value": 23,
+  "condition": "condition 24",
+  "id": "24"
+ },
+ {
+  "insertedAt": "2036-04-02T14:53:16.779Z",
+  "value": 82,
+  "condition": "condition 25",
+  "id": "25"
+ },
+ {
+  "insertedAt": "2011-08-01T13:37:43.535Z",
+  "value": 44,
+  "condition": "condition 26",
+  "id": "26"
+ },
+ {
+  "insertedAt": "2094-09-21T11:03:21.153Z",
+  "value": 31,
+  "condition": "condition 27",
+  "id": "27"
+ },
+ {
+  "insertedAt": "2081-04-04T21:42:15.423Z",
+  "value": 63,
+  "condition": "condition 28",
+  "id": "28"
+ },
+ {
+  "insertedAt": "2018-05-05T21:58:57.852Z",
+  "value": 69,
+  "condition": "condition 29",
+  "id": "29"
+ },
+ {
+  "insertedAt": "2052-02-24T19:37:36.832Z",
+  "value": 89,
+  "condition": "condition 30",
+  "id": "30"
+ },
+ {
+  "insertedAt": "2002-12-29T01:08:39.322Z",
+  "value": 39,
+  "condition": "condition 31",
+  "id": "31"
+ },
+ {
+  "insertedAt": "2024-11-22T10:45:11.662Z",
+  "value": 46,
+  "condition": "condition 32",
+  "id": "32"
+ },
+ {
+  "insertedAt": "2091-09-29T00:28:17.932Z",
+  "value": 71,
+  "condition": "condition 33",
+  "id": "33"
+ },
+ {
+  "insertedAt": "2054-09-26T04:55:04.571Z",
+  "value": 66,
+  "condition": "condition 34",
+  "id": "34"
+ },
+ {
+  "insertedAt": "2001-11-06T05:46:40.680Z",
+  "value": 17,
+  "condition": "condition 35",
+  "id": "35"
+ },
+ {
+  "insertedAt": "2093-11-02T20:47:56.252Z",
+  "value": 9,
+  "condition": "condition 36",
+  "id": "36"
+ },
+ {
+  "insertedAt": "2084-07-30T19:06:44.740Z",
+  "value": 53,
+  "condition": "condition 37",
+  "id": "37"
+ },
+ {
+  "insertedAt": "2027-03-27T09:55:28.645Z",
+  "value": 65,
+  "condition": "condition 38",
+  "id": "38"
+ },
+ {
+  "insertedAt": "2014-12-08T06:27:54.404Z",
+  "value": 61,
+  "condition": "condition 39",
+  "id": "39"
+ },
+ {
+  "insertedAt": "2072-05-22T01:44:26.683Z",
+  "value": 54,
+  "condition": "condition 40",
+  "id": "40"
+ },
+ {
+  "insertedAt": "2010-10-06T06:51:12.410Z",
+  "value": 51,
+  "condition": "condition 41",
+  "id": "41"
+ },
+ {
+  "insertedAt": "1995-10-03T02:04:23.702Z",
+  "value": 95,
+  "condition": "condition 42",
+  "id": "42"
+ },
+ {
+  "insertedAt": "2015-04-23T10:26:56.571Z",
+  "value": 97,
+  "condition": "condition 43",
+  "id": "43"
+ }
+]
